@@ -69,7 +69,7 @@ add() {
 		#echo "  $innerDesktopFilePath --> $appImage_desktopFile"
 		iso_extract "$app" "$innerDesktopFilePath" "$appImage_desktopFile" || { echo "Failed to extract '$innerDesktopFilePath' file" >&2; return 1; }
 
-		local innerIconPath=$(desktopFile_getParameter "$appImage_desktopFile" Icon)
+		local innerIconPath=".DirIcon" #$(desktopFile_getParameter "$appImage_desktopFile" Icon)
 		rm "$appImage_desktopFile"
 
 		# Then, we can actually extract the icon
