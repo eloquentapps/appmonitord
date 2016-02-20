@@ -16,10 +16,10 @@
 #         ./monitorAppImages.sh [AppImages or directories containing AppImages...]
 
 
-DefaultAppImageDirectory="$HOME/Applications/"
 AppImageFilenameFilter='.*\.(run|AppImage)'
+DefaultAppImageDirectory="/Apps/"
 
-DesktopFilesDirectory="/$HOME/.local/share/applications"
+DesktopFilesDirectory="/usr/local/share/applications"
 
 add() {
 	iso_extract() {
@@ -55,8 +55,8 @@ add() {
 		echo "Marking the AppImage executable"
 		chmod +x "$app"
 	fi
-	
-	XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+
+	XDG_DATA_HOME=${XDG_DATA_HOME:-/usr/local/share}
 	local name="$(basename "$app")"
 	local appImage_icon="$XDG_DATA_HOME/icons/application-x-appimage-${name}.png"
 	if [ ! -f "$appImage_icon" ]; then
