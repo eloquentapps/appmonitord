@@ -16,8 +16,8 @@
 #         ./monitorAppImages.sh [AppImages or directories containing AppImages...]
 
 
-AppImageFilenameFilter='.*\.(run|AppImage)'
 DefaultAppImageDirectory="/Apps/"
+AppImageFilenameFilter='.*\.(run|AppImage|app)'
 
 DesktopFilesDirectory="/usr/local/share/applications"
 
